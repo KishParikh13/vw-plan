@@ -157,9 +157,11 @@
 
   /* checklist */
   .checks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-  .checks li{display:flex;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:15px}
-  .checks li::before{content:"?";flex:0 0 auto;width:24px;height:24px;border-radius:50%;
-    background:var(--soft);color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:900}
+  .checks li{display:flex;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:15px;align-items:flex-start}
+  .checks li::before{content:"✓";flex:0 0 auto;width:24px;height:24px;border-radius:50%;
+    background:#e6f0ea;color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px}
+  .checks li b{color:var(--green)}
+  .checks li .a{color:var(--muted)}
 
   footer{background:var(--green);color:#bcd6c2;padding:28px 0;font-size:13.5px;text-align:center}
   footer a{color:#cfe0d3}
@@ -184,7 +186,7 @@
     <a href="#roles">Roles</a>
     <a href="#tasks">Tasks by Phase</a>
     <a href="#volunteers">Volunteers</a>
-    <a href="#questions">Open Questions</a>
+    <a href="#questions">Confirmed</a>
   </div>
 </nav>
 
@@ -433,17 +435,18 @@
     <div class="note" style="margin-top:16px"><b>How to structure it:</b> clear roles like Chinmaya, flexible time like Isha. Offer a simple 3-month trial so young volunteers aren't scared off by a big commitment.</div>
   </section>
 
-  <!-- QUESTIONS -->
+  <!-- CONFIRMED -->
   <section class="sec" id="questions">
     <div class="eyebrow">Before we start</div>
-    <h2 class="h">Open questions for Dr. Janki and the team</h2>
+    <h2 class="h">What's confirmed with Dr. Janki and the team</h2>
+    <p class="sub">The green lights are in. The path is clear to start.</p>
     <ul class="checks">
-      <li>Is Dr. Janki comfortable with old lectures being re-cut into short, punchy clips for TikTok and Instagram?</li>
-      <li>Can the India team share the raw lecture files and the Foundation Course curriculum for US use?</li>
-      <li>Can we take course payments and donations through the US nonprofit yet?</li>
-      <li>How big is the existing email list, and can we send a donation ask to it?</li>
-      <li>Is there a free book chapter we can offer as a welcome gift?</li>
-      <li>Who is our first volunteer, and how many hours can they give?</li>
+      <li><div><b>Re-cutting old lectures into short clips.</b> <span class="a">Yes, Dr. Janki is comfortable with it.</span></div></li>
+      <li><div><b>India team sharing raw files and the Foundation Course curriculum.</b> <span class="a">Yes, available if needed.</span></div></li>
+      <li><div><b>Taking course payments and donations through the US nonprofit.</b> <span class="a">Yes, both are cleared.</span></div></li>
+      <li><div><b>Access to the existing email list for a donation ask.</b> <span class="a">Yes, access is coming.</span></div></li>
+      <li><div><b>A free welcome gift for new subscribers.</b> <span class="a">Yes, a gift to be chosen. Placeholder for now.</span></div></li>
+      <li><div><b>The first volunteer.</b> <span class="a">To be recruited from the network (see Volunteers above).</span></div></li>
     </ul>
   </section>
 
