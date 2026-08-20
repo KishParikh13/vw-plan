@@ -21,32 +21,56 @@
     -webkit-font-smoothing:antialiased;line-height:1.55;font-size:17px}
   h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;color:var(--green);margin:0}
   p{margin:0 0 .8em}
-  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
 
-  /* header */
   header.top{background:var(--green);color:var(--cream);padding:40px 0 32px}
   header.top .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#9fc4ac;margin-bottom:12px;font-weight:700}
-  header.top h1{color:var(--cream);font-size:clamp(27px,4.4vw,38px);max-width:700px;font-weight:600}
-  header.top p{color:#cfe0d3;margin-top:14px;max-width:600px;font-size:17px}
+  header.top h1{color:var(--cream);font-size:clamp(27px,4.4vw,38px);max-width:720px;font-weight:600}
+  header.top p{color:#cfe0d3;margin-top:14px;max-width:620px;font-size:17px}
 
-  /* contents nav */
-  nav.toc{position:sticky;top:0;z-index:20;background:rgba(251,252,245,.94);
-    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  nav.toc{position:sticky;top:0;z-index:20;background:rgba(251,252,245,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.toc .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
   nav.toc .wrap::-webkit-scrollbar{display:none}
-  nav.toc a{font-size:13.5px;font-weight:700;color:var(--muted);padding:14px 11px;
-    white-space:nowrap;text-decoration:none;transition:.15s}
+  nav.toc a{font-size:13px;font-weight:700;color:var(--muted);padding:14px 10px;white-space:nowrap;text-decoration:none;transition:.15s}
   nav.toc a:hover{color:var(--teal)}
 
-  /* sections */
   main{padding:14px 0 56px}
   section.sec{padding:32px 0;border-top:1px solid var(--line)}
   section.sec:first-of-type{border-top:0}
   .eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
-  h2.h{font-size:27px;margin:0 0 14px;scroll-margin-top:64px}
+  h2.h{font-size:26px;margin:0 0 14px;scroll-margin-top:60px}
   .sub{color:var(--muted);margin:-6px 0 20px;font-size:16px}
   .block{margin-bottom:24px}
   .block:last-child{margin-bottom:0}
+
+  /* ===== THE FRAMEWORK DIAGRAM ===== */
+  .fw{display:grid;grid-template-columns:190px 1fr 250px;gap:14px;align-items:stretch}
+  @media(max-width:860px){.fw{grid-template-columns:1fr}}
+  .fwmission{background:var(--green);color:#eaf3ea;border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
+  .fwmission .t{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9fc4ac;font-weight:700;margin-bottom:10px}
+  .fwmission b{color:#fff;font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.25}
+  .fwflow{display:flex;flex-direction:column;gap:6px}
+  .fwbox{background:var(--teal);color:#fff;border-radius:12px;padding:13px 16px;box-shadow:var(--shadow)}
+  .fwbox .l{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:700}
+  .fwbox .v{font-family:var(--serif);font-size:16px;font-weight:600;margin-top:1px}
+  .fwbox small{display:block;font-size:12.5px;opacity:.9;margin-top:3px;line-height:1.35}
+  .fwbox.b1{background:#1c7160}.fwbox.b2{background:#186a5b}.fwbox.b3{background:#146261}.fwbox.b4{background:#0a4a3a}
+  .fwarr{text-align:center;color:var(--muted);font-size:14px;line-height:.6}
+  .fwright{display:flex;flex-direction:column;gap:10px}
+  .fwchan{background:linear-gradient(180deg,#c58a2a,#b3852f);color:#fff;border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+  .fwchan .l{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;opacity:.85}
+  .fwchan .list{font-size:13px;line-height:1.5;margin-top:4px}
+  .fwassets{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .fwas{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center}
+  .fwas .l{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .fwas b{display:block;font-family:var(--serif);color:var(--green);font-size:14px;margin-top:2px}
+  .fwbase{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+  @media(max-width:560px){.fwbase{grid-template-columns:1fr}}
+  .fwbar{background:#0d5138;color:#fff;border-radius:12px;padding:15px 18px;text-decoration:none;display:block;box-shadow:var(--shadow);transition:.15s}
+  .fwbar:hover{background:#0a4a3a}
+  .fwbar .l{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:700}
+  .fwbar b{font-family:var(--serif);font-size:16px;font-weight:600}
+  .fwbar span{display:block;font-size:12.5px;opacity:.9;margin-top:2px}
 
   /* cards */
   .cards{display:grid;gap:14px}
@@ -57,48 +81,40 @@
   .card h3{font-size:17px;margin-bottom:7px}
   .card p{font-size:14.5px;color:#33463c;margin:0}
   .card p+p{margin-top:7px}
-
   .stat{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:20px 18px;text-align:center}
-  .stat .big{font-family:var(--serif);font-size:36px;color:var(--green);font-weight:600;line-height:1}
+  .stat .big{font-family:var(--serif);font-size:34px;color:var(--green);font-weight:600;line-height:1}
   .stat .lab{color:var(--muted);font-size:13.5px;margin-top:9px}
   .stat .big.red{color:#a6432f}
 
-  /* callout */
   .callout{background:linear-gradient(180deg,#0a4e35,#06402b);color:#eaf3ea;border-radius:16px;padding:22px 26px}
   .callout .eyebrow{color:#9fc4ac}
   .callout h3{color:#fff;font-size:20px;margin-bottom:8px}
   .callout p{color:#d3e5d6;margin:0;font-size:15.5px}
 
-  /* chip flow (the recipe) */
-  .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-  .chip{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:12px 16px;
-    font-weight:700;color:var(--green);font-size:15px;box-shadow:var(--shadow);flex:1;min-width:150px;text-align:center}
+  /* chip flow */
+  .flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+  .chip{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-weight:700;color:var(--green);font-size:15px;box-shadow:var(--shadow);flex:1;min-width:150px;text-align:center}
   .chip small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:3px}
-  .flow .arw{color:var(--gold);font-weight:900;font-size:18px;flex:0 0 auto}
+  .flow .arw{color:var(--gold);font-weight:900;font-size:18px;flex:0 0 auto;align-self:center}
   @media(max-width:560px){.flow{flex-direction:column}.flow .arw{transform:rotate(90deg)}}
 
-  /* funnel (the journey, prices baked in) */
+  /* funnel */
   .funnel{display:flex;flex-direction:column;align-items:center;gap:8px}
   .fstage{width:100%;border-radius:12px;padding:16px 22px;color:#fff;display:flex;gap:16px;align-items:center;box-shadow:var(--shadow)}
-  .fstage .fn{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);
-    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600}
+  .fstage .fn{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600}
   .fstage .ft{flex:1}
   .fstage h4{color:#fff;font-size:16px;margin:0 0 2px}
   .fstage p{margin:0;font-size:13.5px;opacity:.9;color:#fff}
   .fstage .fp{flex:0 0 auto;font-family:var(--serif);font-weight:600;font-size:15px;white-space:nowrap;color:#fff}
-  .f0{background:#2a8f6f;width:100%}
-  .f1{background:#238068;width:92%}
-  .f2{background:#1c7160;width:84%}
-  .f3{background:#146261;width:72%}
-  .f4{background:#0a4a3a;width:58%}
+  .f0{background:#2a8f6f;width:100%}.f1{background:#238068;width:92%}.f2{background:#1c7160;width:84%}.f3{background:#146261;width:72%}.f4{background:#0a4a3a;width:58%}
   .farrow{color:var(--muted);font-size:16px;line-height:0}
 
-  /* table */
+  /* generic table */
   table.bt{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  table.bt th,table.bt td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);font-size:14.5px}
+  table.bt th,table.bt td{text-align:left;padding:12px 15px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
   table.bt th{background:var(--green);color:var(--cream);font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.03em}
   table.bt tr:last-child td{border-bottom:0}
-  table.bt td:last-child{font-weight:700;color:var(--teal);white-space:nowrap;text-align:right}
+  table.bt td.n{font-weight:700;color:var(--teal);white-space:nowrap}
 
   .note{background:var(--cream);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;font-size:14.5px}
   .note b{color:var(--green)}
@@ -116,6 +132,31 @@
   .role ul{margin:0;padding-left:17px;font-size:14px;color:#43564c}
   .role ul li{margin-bottom:4px}
 
+  /* budget */
+  .budget{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  @media(max-width:640px){.budget{grid-template-columns:1fr}}
+  .bud{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .bud .l{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .bud .n{font-family:var(--serif);font-size:26px;color:var(--green);font-weight:600;margin:4px 0}
+  .bud p{font-size:13.5px;color:#43564c;margin:0}
+
+  /* gantt */
+  .gantt{overflow-x:auto}
+  .gtable{display:grid;grid-template-columns:130px repeat(4,1fr);gap:6px;min-width:560px}
+  .ghead{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#fff;background:var(--green);border-radius:8px;padding:8px 6px;text-align:center}
+  .ghead.blank{background:transparent}
+  .grow{font-size:13px;font-weight:700;color:var(--ink);display:flex;align-items:center;padding:0 4px}
+  .gcell{border-radius:8px;padding:9px 8px;font-size:11.5px;font-weight:700;color:#fff;text-align:center;line-height:1.25;min-height:38px;display:flex;align-items:center;justify-content:center}
+  .gcell.off{background:var(--soft);color:transparent}
+  .g-a{background:#2a8f6f}.g-b{background:#1c7160}.g-c{background:var(--teal)}.g-d{background:#0a4a3a}
+  .g-prep{background:#cdbf8e;color:#5a4a1a}
+
+  /* metrics */
+  .mstar{background:linear-gradient(180deg,#0a4e35,#06402b);color:#eaf3ea;border-radius:14px;padding:18px 22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .mstar .k{font-family:var(--serif);font-size:22px;color:#fff;font-weight:600;flex:0 0 auto}
+  .mstar p{margin:0;font-size:14.5px;color:#d3e5d6}
+  table.bt td .tgt{color:var(--green);font-weight:700}
+
   /* phases */
   .phase{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
   .phhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
@@ -130,11 +171,9 @@
   .ow{display:inline-block;font-size:11px;font-weight:700;background:var(--cream);color:var(--teal);padding:2px 8px;border-radius:20px;margin-left:2px;white-space:nowrap;border:1px solid var(--line)}
   .goal{margin-top:12px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 14px;font-size:13.5px;font-weight:700;color:var(--green)}
 
-  /* confirmed checklist */
   .checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}
   .checks li{display:flex;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:10px;padding:13px 16px;font-size:14.5px;align-items:flex-start}
-  .checks li::before{content:"✓";flex:0 0 auto;width:23px;height:23px;border-radius:50%;
-    background:#e6f0ea;color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px}
+  .checks li::before{content:"✓";flex:0 0 auto;width:23px;height:23px;border-radius:50%;background:#e6f0ea;color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px}
   .checks li b{color:var(--green)}
   .checks li .a{color:var(--muted)}
 
@@ -147,19 +186,21 @@
   <div class="wrap">
     <div class="kicker">Vedanta Wisdom · United States</div>
     <h1>Reach young Americans looking for meaning. Turn their attention into donations.</h1>
-    <p>One simple path: free short videos → an email list we own → donations and course sign-ups. All from lectures Dr. Janki has already given.</p>
+    <p>Built on a standard nonprofit marketing framework: who we reach, what we say, where we say it, what it takes, and how we measure it.</p>
   </div>
 </header>
 
 <nav class="toc">
   <div class="wrap">
-    <a href="#goal">Goal</a>
-    <a href="#pitch">The Pitch</a>
-    <a href="#path">The Path</a>
-    <a href="#money">Money</a>
-    <a href="#roles">Roles</a>
-    <a href="#tasks">Phases</a>
-    <a href="#volunteers">Volunteers</a>
+    <a href="#framework">Framework</a>
+    <a href="#audience">Audience</a>
+    <a href="#message">Message</a>
+    <a href="#channels">Channels</a>
+    <a href="#assets">Assets</a>
+    <a href="#goals">Goals</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#money">Donations</a>
     <a href="#confirmed">Confirmed</a>
   </div>
 </nav>
@@ -167,34 +208,73 @@
 <main>
 <div class="wrap">
 
-  <!-- GOAL -->
-  <section class="sec" id="goal">
-    <div class="eyebrow">The goal</div>
-    <h2 class="h">Donations first. And they're already live.</h2>
+  <!-- FRAMEWORK -->
+  <section class="sec" id="framework">
+    <div class="eyebrow">The whole plan, one picture</div>
+    <h2 class="h">The framework</h2>
+    <p class="sub">Mission drives who we reach. That drives what we do, say, and aim for. Channels and assets carry it. A timeline and metrics keep it honest.</p>
 
-    <div class="block">
-      <div class="callout">
-        <div class="eyebrow">Live today</div>
-        <h3>vedantawisdom.us/donate</h3>
-        <p>Registered 501(c)(3). Gifts are tax-deductible. Runs on Zeffy with zero fees, so $100 arrives as $100. Money can come in now, before any videos.</p>
+    <div class="fw">
+      <div class="fwmission">
+        <div class="t">Mission &amp; vision</div>
+        <b>Make Vedanta a living, practical tool for young Americans, and fund the work that shares it.</b>
+      </div>
+
+      <div class="fwflow">
+        <div class="fwbox b1"><div class="l">Audience</div><div class="v">Two groups</div><small>Seekers 18–25 · the ready 35–45</small></div>
+        <div class="fwarr">▼</div>
+        <div class="fwbox b2"><div class="l">Actions</div><div class="v">Clip, collect, nurture</div><small>Re-cut lectures, capture emails, warm them up</small></div>
+        <div class="fwarr">▼</div>
+        <div class="fwbox b3"><div class="l">Message + call to action</div><div class="v">Name a feeling → Vedanta</div><small>Every clip ends in one link</small></div>
+        <div class="fwarr">▼</div>
+        <div class="fwbox b4"><div class="l">Objectives &amp; goals</div><div class="v">Emails + donations</div><small>Grow the list, bring in gifts and students</small></div>
+      </div>
+
+      <div class="fwright">
+        <div class="fwchan">
+          <div class="l">Channels</div>
+          <div class="list">TikTok · Reels · Shorts · Email · Website · Reddit / campus · Podcasts (later)</div>
+        </div>
+        <div class="fwassets">
+          <div class="fwas"><div class="l">People</div><b>1 volunteer</b></div>
+          <div class="fwas"><div class="l">Content</div><b>100s of hrs</b></div>
+          <div class="fwas"><div class="l">Budget</div><b>~$0 to start</b></div>
+        </div>
       </div>
     </div>
 
-    <div class="block">
-      <div class="cards g3">
-        <div class="stat"><div class="big">15,400</div><div class="lab">YouTube followers, a real head start</div></div>
-        <div class="stat"><div class="big red">Under 150</div><div class="lab">Views on new videos. Almost no one is reached</div></div>
-        <div class="stat"><div class="big">0</div><div class="lab">Emails we own. The biggest gap</div></div>
-      </div>
-      <div class="note" style="margin-top:14px"><b>The teaching and the audience already exist.</b> We just aren't reaching the right people, or keeping in touch with them. That's fixable.</div>
+    <div class="fwbase">
+      <a class="fwbar" href="#timeline"><div class="l">Implementation</div><b>Timeline →</b><span>What happens, and when, over 12 months</span></a>
+      <a class="fwbar" href="#metrics"><div class="l">Evaluation</div><b>Metrics →</b><span>Targets set against real nonprofit benchmarks</span></a>
     </div>
   </section>
 
-  <!-- PITCH -->
-  <section class="sec" id="pitch">
-    <div class="eyebrow">The pitch</div>
-    <h2 class="h">Not old scripture. A way to calm a busy, anxious mind.</h2>
-    <p class="sub">Lead with what young people feel: stress, comparison, burnout. Let Vedanta be the answer. We don't make new content, we share what exists, better.</p>
+  <!-- AUDIENCE -->
+  <section class="sec" id="audience">
+    <div class="eyebrow">Audience</div>
+    <h2 class="h">Two groups, one plan</h2>
+    <div class="cards g2">
+      <div class="card" style="border-top:4px solid var(--teal)">
+        <h3>18 to 25 — the seekers</h3>
+        <p><b>Feel:</b> stress, comparison, "what am I doing with my life."</p>
+        <p><b>Reach on:</b> TikTok, Reels, Shorts. We have no TikTok yet, the biggest miss.</p>
+        <p><b>Lands:</b> short clips that name a real feeling in 2 seconds.</p>
+      </div>
+      <div class="card" style="border-top:4px solid var(--gold)">
+        <h3>35 to 45 — the ready ones</h3>
+        <p><b>Feel:</b> have the career and family, something still off.</p>
+        <p><b>Reach on:</b> LinkedIn, podcasts, word of mouth.</p>
+        <p><b>Lands:</b> Dr. Janki's clear thinking. They give more, sooner.</p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:14px"><b>Clips come first.</b> They serve the young group and reach some older ones too. Podcasts and LinkedIn wait for a second helper.</div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="sec" id="message">
+    <div class="eyebrow">Message &amp; call to action</div>
+    <h2 class="h">Not old scripture. A way to calm a busy mind.</h2>
+    <p class="sub">Lead with what young people feel. Let Vedanta be the answer. We don't make new content, we share what exists, better.</p>
 
     <div class="block">
       <div class="flow">
@@ -204,59 +284,177 @@
         <div class="arw">→</div>
         <div class="chip">Her face first<small>always, in every clip</small></div>
       </div>
-      <div class="note" style="margin-top:14px"><b>Her own numbers prove it.</b> Videos that did this hit 4,000 to 7,000 views. New ones open with slides and text, and get under 150.</div>
+      <div class="note" style="margin-top:14px"><b>Her own numbers prove it.</b> Videos that did this hit 4,000 to 7,000 views. New ones open with slides and get under 150.</div>
     </div>
 
     <div class="block">
-      <div class="cards g2">
-        <div class="card" style="border-top:4px solid var(--teal)">
-          <h3>18 to 25 — the seekers</h3>
-          <p><b>Reach them on:</b> TikTok, Reels, Shorts. We have no TikTok yet, the biggest miss.</p>
-          <p><b>What lands:</b> short clips that name a real feeling in the first 2 seconds.</p>
-        </div>
-        <div class="card" style="border-top:4px solid var(--gold)">
-          <h3>35 to 45 — the ready ones</h3>
-          <p><b>Reach them on:</b> LinkedIn, podcasts, word of mouth.</p>
-          <p><b>What lands:</b> Dr. Janki's clear thinking. A podcast beats a Reel. They give more, sooner.</p>
-        </div>
+      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">The path.</b> No one joins a year-long program cold. Each step earns the next.</p>
+      <div class="funnel">
+        <div class="fstage f0"><div class="fn">1</div><div class="ft"><h4>Watch a short clip</h4><p>A few a week, cut from old lectures.</p></div><div class="fp">Free</div></div>
+        <div class="farrow">▼</div>
+        <div class="fstage f1"><div class="fn">2</div><div class="ft"><h4>Give an email</h4><p>Every clip points to one link: a free set of 3 talks.</p></div><div class="fp">Free</div></div>
+        <div class="farrow">▼</div>
+        <div class="fstage f2"><div class="fn">3</div><div class="ft"><h4>Get a weekly email</h4><p>One idea a week. Warm, not salesy. Points to a book (~$15).</p></div><div class="fp">Free</div></div>
+        <div class="farrow">▼</div>
+        <div class="fstage f3"><div class="fn">4</div><div class="ft"><h4>Take the Foundation Course</h4><p>The first paid step, and the key bridge to the year.</p></div><div class="fp">$200–500</div></div>
+        <div class="farrow">▼</div>
+        <div class="fstage f4"><div class="fn">5</div><div class="ft"><h4>Join the one-year program</h4><p>Offered to graduates by a personal call, on months of trust.</p></div><div class="fp">Apply</div></div>
       </div>
-      <div class="note" style="margin-top:14px"><b>So clips come first.</b> They serve the young group and reach some older ones too. Podcasts and LinkedIn wait for a second helper.</div>
     </div>
   </section>
 
-  <!-- PATH -->
-  <section class="sec" id="path">
-    <div class="eyebrow">The path</div>
-    <h2 class="h">Five steps from stranger to student</h2>
-    <p class="sub">No one joins a year-long program cold. Each step earns the next.</p>
+  <!-- CHANNELS -->
+  <section class="sec" id="channels">
+    <div class="eyebrow">Channels</div>
+    <h2 class="h">Each channel has one job</h2>
+    <p class="sub">We don't spread thin. Every channel does a specific thing in the path above.</p>
+    <table class="bt">
+      <tr><th>Channel</th><th>Its job</th><th>Starts</th></tr>
+      <tr><td class="n">TikTok / Reels / Shorts</td><td>Reach strangers. Top of the funnel.</td><td>Phase 1</td></tr>
+      <tr><td class="n">Email list</td><td>The asset we own. Nurture toward donations and courses.</td><td>Phase 0</td></tr>
+      <tr><td class="n">Website /donate</td><td>Turn intent into a gift. Already live.</td><td>Now</td></tr>
+      <tr><td class="n">Reddit + campus groups</td><td>Seed content where seekers already gather.</td><td>Phase 1</td></tr>
+      <tr><td class="n">Podcasts + LinkedIn</td><td>Reach the 35–45 group. Bigger gifts.</td><td>Phase 3</td></tr>
+      <tr><td class="n">Paid boosts</td><td>Amplify only clips that already went viral.</td><td>Phase 3</td></tr>
+    </table>
+  </section>
+
+  <!-- ASSETS -->
+  <section class="sec" id="assets">
+    <div class="eyebrow">Assets: people, content, budget</div>
+    <h2 class="h">What it takes to run this</h2>
 
     <div class="block">
-      <div class="funnel">
-        <div class="fstage f0"><div class="fn">1</div><div class="ft"><h4>Watch a short clip</h4><p>A few a week on TikTok, Reels, Shorts. Cut from old lectures.</p></div><div class="fp">Free</div></div>
-        <div class="farrow">▼</div>
-        <div class="fstage f1"><div class="fn">2</div><div class="ft"><h4>Give an email</h4><p>Every clip points to one link: a free set of 3 talks. Now we can reach them.</p></div><div class="fp">Free</div></div>
-        <div class="farrow">▼</div>
-        <div class="fstage f2"><div class="fn">3</div><div class="ft"><h4>Get a weekly email</h4><p>One idea a week. Warm, not salesy. Points to a book (~$15) and a welcome session.</p></div><div class="fp">Free</div></div>
-        <div class="farrow">▼</div>
-        <div class="fstage f3"><div class="fn">4</div><div class="ft"><h4>Take the Foundation Course</h4><p>The first paid step. Pay for this and you're a serious learner.</p></div><div class="fp">$200–500</div></div>
-        <div class="farrow">▼</div>
-        <div class="fstage f4"><div class="fn">5</div><div class="ft"><h4>Join the one-year program</h4><p>Offered to graduates by a personal call. Sold on months of trust, never off a video.</p></div><div class="fp">Apply</div></div>
+      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">People.</b> Two roles now, two more as we grow.</p>
+      <div class="roles">
+        <div class="role now"><div class="rtag">Start now</div><h3>Clip Maker</h3><div class="who">1 volunteer · 8–10 hrs/wk · age 20–30</div><ul><li>Pick the best moments from old lectures</li><li>Write hooks in a young US voice</li><li>Post 3–5 clips a week</li></ul></div>
+        <div class="role now"><div class="rtag">Start now</div><h3>Project Lead</h3><div class="who">Kish · part-time</div><ul><li>Set up the tools once</li><li>Approve clips before they post</li><li>Coordinate with the India team</li></ul></div>
+        <div class="role later"><div class="rtag">Phase 2</div><h3>Email &amp; Community</h3><div class="who">2nd volunteer</div><ul><li>Write the weekly email</li><li>Reply to comments</li><li>Run donation asks</li></ul></div>
+        <div class="role later"><div class="rtag">Phase 3</div><h3>Course Coordinator</h3><div class="who">part-time, paid or senior</div><ul><li>Run live intro sessions</li><li>Handle course sign-ups</li><li>Manage 1-year applications</li></ul></div>
       </div>
-      <div class="note" style="margin-top:14px"><b>The Foundation Course is the key bridge.</b> It's the test drive before the year. The single most important step in the plan.</div>
     </div>
+
+    <div class="block">
+      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">Content.</b> The rare part: it already exists.</p>
+      <div class="cards g3">
+        <div class="stat"><div class="big">100s</div><div class="lab">Hours of recorded lectures to cut from</div></div>
+        <div class="stat"><div class="big">15,400</div><div class="lab">YouTube followers, a head start</div></div>
+        <div class="stat"><div class="big">2</div><div class="lab">Books already on Amazon US</div></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">Budget.</b> Version one costs almost nothing but time.</p>
+      <div class="budget">
+        <div class="bud"><div class="l">Phase 0–1</div><div class="n">~$0</div><p>Free email + course tiers, existing clip tools, Zeffy zero fees, volunteer time.</p></div>
+        <div class="bud"><div class="l">Phase 2</div><div class="n">~$0–50/mo</div><p>Email tool paid tier once the list grows past a few thousand.</p></div>
+        <div class="bud"><div class="l">Phase 3</div><div class="n">$200–500/mo</div><p>Optional ad boosts on proven clips. Only if it earns its keep.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOALS -->
+  <section class="sec" id="goals">
+    <div class="eyebrow">Objectives &amp; goals</div>
+    <h2 class="h">What "working" looks like</h2>
+    <div class="cards g3">
+      <div class="stat"><div class="big">500–1,500</div><div class="lab">Email subscribers in 90 days</div></div>
+      <div class="stat"><div class="big">3–5</div><div class="lab">Clips a week, held for 12 weeks</div></div>
+      <div class="stat"><div class="big">1st</div><div class="lab">US paying student + first donations by month 6</div></div>
+    </div>
+    <div class="note" style="margin-top:14px"><b>Donations are the top objective,</b> and they're already live. The email list is the leading indicator. Everything else follows it.</div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="sec" id="timeline">
+    <div class="eyebrow">Implementation plan</div>
+    <h2 class="h">Timeline, by workstream</h2>
+    <p class="sub">Each phase starts only when the last one works. Color = active work.</p>
+    <div class="gantt">
+      <div class="gtable">
+        <div class="ghead blank"></div>
+        <div class="ghead">P0 · Wk 1–3</div>
+        <div class="ghead">P1 · Mo 1–3</div>
+        <div class="ghead">P2 · Mo 3–6</div>
+        <div class="ghead">P3 · Mo 6–12</div>
+
+        <div class="grow">Clips</div>
+        <div class="gcell g-prep">Cut 3 intro talks</div>
+        <div class="gcell g-a">3–5 / week</div>
+        <div class="gcell g-b">Keep posting</div>
+        <div class="gcell g-c">Boost winners</div>
+
+        <div class="grow">Email list</div>
+        <div class="gcell g-prep">Set up tool + page</div>
+        <div class="gcell g-a">Weekly email</div>
+        <div class="gcell g-b">Welcome series</div>
+        <div class="gcell g-c">Keep nurturing</div>
+
+        <div class="grow">Donations</div>
+        <div class="gcell g-prep">Seed ask</div>
+        <div class="gcell off"></div>
+        <div class="gcell g-b">Ask the list</div>
+        <div class="gcell g-c">Year-end push</div>
+
+        <div class="grow">Courses</div>
+        <div class="gcell off"></div>
+        <div class="gcell off"></div>
+        <div class="gcell g-b">Open first course</div>
+        <div class="gcell g-c">Run a calendar</div>
+
+        <div class="grow">Program + PR</div>
+        <div class="gcell off"></div>
+        <div class="gcell off"></div>
+        <div class="gcell off"></div>
+        <div class="gcell g-d">Podcasts + 1-yr flow</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section class="sec" id="metrics">
+    <div class="eyebrow">Metrics &amp; evaluation</div>
+    <h2 class="h">Targets against real benchmarks</h2>
+    <p class="sub">Set expectations with numbers from across the US nonprofit sector, so we plan patiently and know what "good" is.</p>
+
+    <div class="block">
+      <div class="mstar">
+        <div class="k">★ North-star metric: email sign-ups</div>
+        <p>The one number to watch weekly. Traffic, donations, and course sales all track back to the size and health of the list we own.</p>
+      </div>
+    </div>
+
+    <table class="bt">
+      <tr><th>Metric</th><th>Typical nonprofit</th><th>Our target / watch</th></tr>
+      <tr><td class="n">Email open rate</td><td>~15–25%</td><td><span class="tgt">Aim 25%+</span> (engaged niche)</td></tr>
+      <tr><td class="n">Email → paid conversion</td><td>2–3%</td><td>Plan around 2–3%</td></tr>
+      <tr><td class="n">Avg online gift</td><td>$87 one-time · $23 monthly</td><td>Set ask tiers around it</td></tr>
+      <tr><td class="n">Raised per 1,000 site visits</td><td>~$1,190</td><td>Drive clip traffic to /donate</td></tr>
+      <tr><td class="n">Email list churn</td><td>~14% / year</td><td>Keep sign-ups ahead of churn</td></tr>
+      <tr><td class="n">Course sign-up (warm list)</td><td>8–15%</td><td>First US course, month 3–6</td></tr>
+    </table>
+    <div class="note" style="margin-top:14px"><b>Review cadence:</b> one short numbers report each month, clips posted, follower growth, sign-ups, opens, gifts, students. Do more of what moves the list.</div>
   </section>
 
   <!-- MONEY -->
   <section class="sec" id="money">
-    <div class="eyebrow">The money</div>
+    <div class="eyebrow">Donations engine</div>
     <h2 class="h">Two clocks, running together</h2>
-    <p class="sub">One brings money this quarter. The other builds donors for years to come.</p>
+    <p class="sub">One brings money this quarter. The other builds donors for years.</p>
+
+    <div class="block">
+      <div class="callout">
+        <div class="eyebrow">Live today</div>
+        <h3>vedantawisdom.us/donate</h3>
+        <p>Registered 501(c)(3). Gifts are tax-deductible. Runs on Zeffy with zero fees, so $100 arrives as $100.</p>
+      </div>
+    </div>
 
     <div class="block">
       <div class="cards g2">
         <div class="card" style="border-top:4px solid var(--gold)">
           <h3>Give Now — the warm circle</h3>
-          <p>Current students, WhatsApp groups, the India email list, personal networks. Seed money, available today.</p>
+          <p>Current students, WhatsApp groups, the India list, personal networks. Seed money, today.</p>
           <p><b>Move:</b> a clear ask with a real goal ("our first $25,000"), plus a monthly option.</p>
         </div>
         <div class="card" style="border-top:4px solid var(--teal)">
@@ -270,9 +468,9 @@
     <div class="block">
       <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">Name what the money does.</b> "Sponsor a student" beats "please donate."</p>
       <div class="cards g3">
-        <div class="card"><h3>Keep it free</h3><p>Videos, weekly classes, and free talks stay open to all.</p></div>
+        <div class="card"><h3>Keep it free</h3><p>Videos, classes, and free talks stay open to all.</p></div>
         <div class="card"><h3>Sponsor a student</h3><p>Cover a course or the year for someone who can't afford it.</p></div>
-        <div class="card"><h3>Build the University</h3><p>The long vision: a residential Vedanta university. For big, legacy gifts.</p></div>
+        <div class="card"><h3>Build the University</h3><p>The long vision: a residential Vedanta university. For legacy gifts.</p></div>
       </div>
     </div>
 
@@ -280,109 +478,9 @@
       <div class="cards g3">
         <div class="card"><h3>Monthly givers</h3><p>The steadiest money there is. Ask one-time givers to go monthly.</p></div>
         <div class="card"><h3>Grants</h3><p>Can dwarf small gifts. Already in motion. Needs one owner.</p></div>
-        <div class="card"><h3>Year-end push</h3><p>Most US giving is in December. Plan one big seasonal ask.</p></div>
+        <div class="card"><h3>Courses on Ruzuku</h3><p>Built for spiritual teachers. No fees, free up to 5 students. Others charge ~$295–375 intro.</p></div>
       </div>
     </div>
-
-    <div class="block">
-      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">How many followers actually pay.</b> Real numbers from similar groups. Plan patiently.</p>
-      <table class="bt">
-        <tr><th>Invite a warm audience to…</th><th>Say yes</th></tr>
-        <tr><td>A short course ($200–500)</td><td>8–15%</td></tr>
-        <tr><td>A larger course ($500–1,500)</td><td>5–10%</td></tr>
-        <tr><td>Any paid step, from the email list</td><td>2–3%</td></tr>
-        <tr><td>The one-year program ($3,000+)</td><td>By personal call</td></tr>
-      </table>
-      <div class="note" style="margin-top:14px"><b>So the free audience must be large,</b> and the email list is everything. Even a great offer converts a small share. That's normal.</div>
-    </div>
-
-    <div class="block">
-      <div class="cards g2">
-        <div class="card"><h3>What others charge</h3><p><b>Art of Living:</b> $295 intro. <b>Isha:</b> $375 online.<br>The pattern: a sub-$400 first course, deeper programs after. Match it.</p></div>
-        <div class="card"><h3>Where to run courses</h3><p><b>Ruzuku.</b> Built for spiritual teachers. Simple, no fees, free up to 5 students. Perfect to start.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROLES -->
-  <section class="sec" id="roles">
-    <div class="eyebrow">The team</div>
-    <h2 class="h">Two roles now, two more as we grow</h2>
-    <div class="roles">
-      <div class="role now"><div class="rtag">Start now</div><h3>Clip Maker</h3><div class="who">1 volunteer · 8–10 hrs/wk · age 20–30, on TikTok</div><ul><li>Pick the best moments from old lectures</li><li>Write hooks in a young US voice</li><li>Post 3–5 clips a week</li></ul></div>
-      <div class="role now"><div class="rtag">Start now</div><h3>Project Lead</h3><div class="who">Kish · part-time</div><ul><li>Set up the tools once</li><li>Approve clips before they post</li><li>Coordinate with the India team</li></ul></div>
-      <div class="role later"><div class="rtag">Phase 2</div><h3>Email &amp; Community</h3><div class="who">2nd volunteer · any age</div><ul><li>Write the weekly email</li><li>Reply to comments and messages</li><li>Run the donation asks</li></ul></div>
-      <div class="role later"><div class="rtag">Phase 3</div><h3>Course Coordinator</h3><div class="who">part-time, paid or senior</div><ul><li>Run live US intro sessions</li><li>Handle course sign-ups</li><li>Manage 1-year applications</li></ul></div>
-    </div>
-  </section>
-
-  <!-- TASKS -->
-  <section class="sec" id="tasks">
-    <div class="eyebrow">The work, in order</div>
-    <h2 class="h">Each phase starts only when the last one works</h2>
-
-    <div class="phase">
-      <div class="phhead"><span class="pill p0">Phase 0</span><h3>Set up</h3><span class="dur">Weeks 1–3</span></div>
-      <ul class="task">
-        <li><b>Green light from Dr. Janki</b> to re-cut lectures. <span class="ow">Lead</span></li>
-        <li><b>Get raw files + curriculum</b> from Mahesh &amp; Nikhil. <span class="ow">Lead</span></li>
-        <li><b>Set up the email tool</b> and a sign-up page. <span class="ow">Lead</span></li>
-        <li><b>Set up the clip pipeline.</b> <span class="ow">Lead</span></li>
-        <li><b>Cut 3 intro talks</b> for the welcome series. <span class="ow">Lead</span></li>
-        <li><b>Recruit the first Clip Maker.</b> <span class="ow">Lead</span></li>
-        <li><b>Run the seed donation ask</b> to the warm circle. <span class="ow">Lead</span></li>
-      </ul>
-    </div>
-
-    <div class="phase">
-      <div class="phhead"><span class="pill p1">Phase 1</span><h3>Fill the funnel</h3><span class="dur">Months 1–3</span></div>
-      <ul class="task">
-        <li><b>Post 3–5 clips a week</b> to TikTok, Reels, Shorts. <span class="ow">Clip Maker</span></li>
-        <li><b>Point every clip to the free sign-up.</b> <span class="ow">Clip Maker</span></li>
-        <li><b>Send one weekly email.</b> <span class="ow">Lead</span></li>
-        <li><b>Share in r/hinduism</b> and Hindu Student Council chapters. <span class="ow">Clip Maker</span></li>
-        <li><b>Do more of what works.</b> Report monthly. <span class="ow">Lead</span></li>
-      </ul>
-      <div class="goal">Goal: 3+ clips/week for 12 weeks · 500–1,500 subscribers</div>
-    </div>
-
-    <div class="phase">
-      <div class="phhead"><span class="pill p2">Phase 2</span><h3>First money</h3><span class="dur">Months 3–6</span></div>
-      <ul class="task">
-        <li><b>Set up course checkout</b> on Ruzuku. <span class="ow">Lead</span></li>
-        <li><b>Move the Foundation Course</b> onto the US platform. <span class="ow">Lead + India</span></li>
-        <li><b>Add the second volunteer.</b> <span class="ow">Lead</span></li>
-        <li><b>First donation ask</b> to the email list. <span class="ow">Community</span></li>
-        <li><b>Launch the welcome series.</b> <span class="ow">Community</span></li>
-        <li><b>Open the first US course</b> at a US time and price. <span class="ow">Lead</span></li>
-      </ul>
-      <div class="goal">Goal: first paying students · first US donations</div>
-    </div>
-
-    <div class="phase">
-      <div class="phhead"><span class="pill p3">Phase 3</span><h3>Scale</h3><span class="dur">Months 6–12</span></div>
-      <ul class="task">
-        <li><b>Add the Course Coordinator.</b> <span class="ow">Lead</span></li>
-        <li><b>Run live intro sessions</b> and a course calendar. <span class="ow">Coordinator</span></li>
-        <li><b>Build the 1-year application</b> and call flow. <span class="ow">Coordinator</span></li>
-        <li><b>Pitch Dr. Janki to US podcasts.</b> <span class="ow">Lead</span></li>
-        <li><b>Boost only clips that already went viral.</b> <span class="ow">Community</span></li>
-        <li><b>Swap India links for US ones.</b> <span class="ow">Lead</span></li>
-      </ul>
-      <div class="goal">Goal: the whole path runs on its own</div>
-    </div>
-  </section>
-
-  <!-- VOLUNTEERS -->
-  <section class="sec" id="volunteers">
-    <div class="eyebrow">Finding people</div>
-    <h2 class="h">We need one or two who care, from the network</h2>
-    <div class="cards g3">
-      <div class="card"><h3>Seva networks</h3><p><b>Sewa International, Chinmaya Mission, BAPS.</b> They already give time to dharmic causes.</p></div>
-      <div class="card"><h3>Campus groups</h3><p><b>Hindu Student Council</b> — 60+ chapters (MIT, NYU, Rutgers). The right age for clips.</p></div>
-      <div class="card"><h3>Online</h3><p><b>r/hinduism</b> (63K), <b>r/vedanta</b>, Vedanta Discords. Find help and share content.</p></div>
-    </div>
-    <div class="note" style="margin-top:14px"><b>Offer a 3-month trial</b> so young volunteers aren't scared off by a big commitment.</div>
   </section>
 
   <!-- CONFIRMED -->
