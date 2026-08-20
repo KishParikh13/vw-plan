@@ -204,6 +204,33 @@
   .note{background:var(--cream);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;font-size:15.5px}
   .note b{color:var(--green)}
 
+  /* roles */
+  .roles{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.roles{grid-template-columns:1fr}}
+  .role{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 24px;position:relative}
+  .role.now{border-top:4px solid var(--teal)}
+  .role.later{border-top:4px solid var(--line);opacity:.92}
+  .role .rtag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .role.later .rtag{color:var(--muted)}
+  .role h3{font-size:20px;margin-bottom:4px}
+  .role .who{color:var(--muted);font-size:13.5px;margin-bottom:12px}
+  .role ul{margin:0;padding-left:18px;font-size:14.5px;color:#43564c}
+  .role ul li{margin-bottom:5px}
+
+  /* phases */
+  .phase{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow)}
+  .phhead{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .phhead h3{font-size:21px;flex:1;min-width:180px}
+  .phhead .dur{color:var(--muted);font-size:13.5px;font-weight:700}
+  .pill{font-size:12px;font-weight:900;color:#fff;padding:5px 12px;border-radius:20px;letter-spacing:.03em}
+  .pill.p0{background:#8a6d1f}.pill.p1{background:#2a8f6f}.pill.p2{background:var(--teal)}.pill.p3{background:var(--green)}
+  ul.task{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  ul.task li{font-size:15px;color:#33463c;padding-left:26px;position:relative;line-height:1.5}
+  ul.task li::before{content:"";position:absolute;left:4px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--soft);border:2px solid var(--teal)}
+  ul.task li b{color:var(--ink)}
+  .ow{display:inline-block;font-size:11px;font-weight:700;background:var(--cream);color:var(--teal);padding:2px 9px;border-radius:20px;margin-left:4px;white-space:nowrap;border:1px solid var(--line)}
+  .goal{margin-top:14px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:11px 16px;font-size:14px;font-weight:700;color:var(--green)}
+
   footer{background:var(--green);color:#bcd6c2;padding:30px 0;font-size:13.5px;text-align:center}
   footer a{color:#cfe0d3}
   .hr{height:1px;background:var(--line);border:0;margin:0 0 40px}
@@ -225,7 +252,7 @@
     <button class="tab-btn" data-tab="audit"><span class="n">2</span>What We Found</button>
     <button class="tab-btn" data-tab="funnel"><span class="n">3</span>The Journey</button>
     <button class="tab-btn" data-tab="money"><span class="n">4</span>Donations &amp; Courses</button>
-    <button class="tab-btn" data-tab="team"><span class="n">5</span>Team &amp; Rollout</button>
+    <button class="tab-btn" data-tab="team"><span class="n">5</span>Roles &amp; Tasks</button>
   </div>
 </nav>
 
@@ -278,6 +305,29 @@
           <p>Each new helper or small budget unlocks the next stage: email nurturing, then paid courses, then live sessions and the program itself. We never get ahead of what's proven.</p>
         </div>
       </div>
+    </div>
+
+    <div class="block">
+      <div class="eyebrow">Two audiences, two approaches</div>
+      <h2 class="sec">We are reaching two different groups at once</h2>
+      <p class="sub">They have different worries, live in different places online, and need different things from us. The plan serves both without splitting our effort.</p>
+      <div class="cards g2">
+        <div class="card" style="border-top:4px solid var(--teal)">
+          <h3>18 to 25 — the seekers</h3>
+          <p><b>Where they are:</b> TikTok, Instagram Reels, YouTube Shorts.</p>
+          <p><b>What they feel:</b> anxiety, "what am I doing with my life," comparison, stress about the future. They are open but skeptical.</p>
+          <p><b>What works:</b> short punchy clips that name a real feeling in the first two seconds. They share things that make them feel understood. They discover new voices on TikTok first.</p>
+          <p><b>Path for them:</b> Clip → follow → free talks → book → Foundation Course over 6-12 months.</p>
+        </div>
+        <div class="card" style="border-top:4px solid var(--gold)">
+          <h3>35 to 45 — the ready ones</h3>
+          <p><b>Where they are:</b> LinkedIn, podcasts, word of mouth from trusted communities.</p>
+          <p><b>What they feel:</b> they have the career, the family. Something still feels off. They are ready to go deeper, not just scroll.</p>
+          <p><b>What works:</b> Dr. Janki's intellectual rigor. "Applied philosophy" framing. A podcast appearance or a talk in their city lands harder than a Reel.</p>
+          <p><b>Path for them:</b> Podcast / LinkedIn post → website → intro call → Foundation Course or direct Diploma inquiry. Faster conversion, larger gift size.</p>
+        </div>
+      </div>
+      <div class="note" style="margin-top:0"><b>Why this matters for resources:</b> short-form clips serve the 18-25 group and also reach some 35-45s. So we do clips first. Podcast outreach and LinkedIn content come when we have a second volunteer.</div>
     </div>
 
     <div class="note"><b>What success looks like in 90 days:</b> a steady habit of a few short videos a week, 500 to 1,500 people on our email list, and the first US student in a paid course. Not big money yet, proof the path works.</div>
@@ -458,51 +508,98 @@
   </div>
 </section>
 
-<!-- ============ TAB 5: TEAM ============ -->
+<!-- ============ TAB 5: ROLES & TASKS ============ -->
 <section class="panel" id="team">
   <div class="wrap">
 
     <div class="block">
-      <div class="eyebrow">Version one</div>
-      <h2 class="sec">What one part-time volunteer does each week</h2>
-      <p class="sub">About 8 to 10 hours a week. Smart tools do the heavy lifting, so the person spends their time on judgment and taste, not busywork.</p>
-      <div class="loop">
-        <div class="lp"><div class="lpn">1</div><h4>Pick the moments</h4><p>Software listens to a lecture and suggests the best short clips. The volunteer chooses the 3 to 5 strongest.</p><span class="badge auto">tools help</span></div>
-        <div class="lp"><div class="lpn">2</div><h4>Write the hook</h4><p>They write the opening line and caption in a warm, young, American voice. This is the human part that matters most.</p><span class="badge human">human touch</span></div>
-        <div class="lp"><div class="lpn">3</div><h4>Post &amp; collect</h4><p>Tools cut and caption the clips and post them everywhere. Each one points to the email sign-up.</p><span class="badge auto">tools help</span></div>
+      <div class="eyebrow">Who does what</div>
+      <h2 class="sec">The roles</h2>
+      <p class="sub">Small team, clear lanes. We start with the first two roles only. The rest turn on as we grow.</p>
+      <div class="roles">
+        <div class="role now"><div class="rtag">Start now</div><h3>Clip Maker</h3><div class="who">1 volunteer · 8–10 hrs/wk · age 20–30, comfortable on TikTok</div><ul><li>Pick the best moments from existing lectures</li><li>Write hooks and captions in a young US voice</li><li>Post 3–5 clips a week to TikTok, Reels, Shorts</li></ul></div>
+        <div class="role now"><div class="rtag">Start now</div><h3>Project Lead</h3><div class="who">Kish · part-time oversight</div><ul><li>Set up the tools once (email, clip pipeline, pages)</li><li>Approve clips and voice before posting</li><li>Coordinate with the India team on assets</li></ul></div>
+        <div class="role later"><div class="rtag">Phase 2</div><h3>Community &amp; Email</h3><div class="who">2nd volunteer · any age</div><ul><li>Write the weekly email and welcome series</li><li>Reply to comments and messages</li><li>Run the donation asks to the existing list</li></ul></div>
+        <div class="role later"><div class="rtag">Phase 3</div><h3>Course Coordinator</h3><div class="who">part-time, paid or senior volunteer</div><ul><li>Run live US-timed intro sessions</li><li>Handle Foundation Course sign-ups</li><li>Manage applications and calls for the 1-year program</li></ul></div>
       </div>
     </div>
 
     <div class="block">
-      <div class="cards g2">
-        <div class="card">
-          <h3>What version one does NOT do yet</h3>
-          <p>No paid ads. No live classes. No community forum. No podcast outreach. We deliberately hold all of it until the simple video-and-email habit is proven and steady.</p>
-        </div>
-        <div class="card">
-          <h3>A few things to set up once</h3>
-          <p>An email sign-up page. A free email tool (free up to 2,500 people). Three intro talks cut from old footage. A donation page. Most of this is a one-time build.</p>
-        </div>
+      <div class="eyebrow">The plan in phases</div>
+      <h2 class="sec">What we actually do, and in what order</h2>
+      <p class="sub">Each phase only starts when the one before it is working. Owner in brackets.</p>
+
+      <div class="phase">
+        <div class="phhead"><span class="pill p0">Phase 0</span><h3>Set the foundation</h3><span class="dur">Weeks 1–3 · one-time setup</span></div>
+        <ul class="task">
+          <li><b>Get the green light from Dr. Janki</b> to re-cut her lectures into short clips. <span class="ow">Lead</span></li>
+          <li><b>Ask the India team (Mahesh &amp; Nikhil)</b> for the raw lecture files, course curriculum, and what is cleared for US use. <span class="ow">Lead</span></li>
+          <li><b>Set up the free email tool</b> (Beehiiv or MailerLite) and a simple sign-up page on the US site. <span class="ow">Lead</span></li>
+          <li><b>Set up the clip pipeline</b> (reuse existing tools to transcribe and cut clips). <span class="ow">Lead</span></li>
+          <li><b>Cut 3 intro talks</b> from old footage for the free welcome series. <span class="ow">Lead</span></li>
+          <li><b>Recruit the first Clip Maker</b> (see sourcing below). <span class="ow">Lead</span></li>
+        </ul>
+      </div>
+
+      <div class="phase">
+        <div class="phhead"><span class="pill p1">Phase 1</span><h3>Fill the top of the funnel</h3><span class="dur">Months 1–3 · the habit</span></div>
+        <ul class="task">
+          <li><b>Post 3–5 clips a week</b> to TikTok, Reels, and Shorts, cut from proven lectures. <span class="ow">Clip Maker</span></li>
+          <li><b>Point every clip to the free 3-talk sign-up.</b> <span class="ow">Clip Maker</span></li>
+          <li><b>Send one simple weekly email</b> to new subscribers. <span class="ow">Lead</span></li>
+          <li><b>Seed content</b> gently in r/hinduism, r/vedanta, and Hindu Student Council chapters. <span class="ow">Clip Maker</span></li>
+          <li><b>Watch what works</b> and do more of it. Report numbers monthly. <span class="ow">Lead</span></li>
+        </ul>
+        <div class="goal">Goal by end: 3+ clips/week held for 12 weeks · 500–1,500 email subscribers</div>
+      </div>
+
+      <div class="phase">
+        <div class="phhead"><span class="pill p2">Phase 2</span><h3>Turn attention into money</h3><span class="dur">Months 3–6 · first dollars</span></div>
+        <ul class="task">
+          <li><b>Set up US payments and the course platform</b> (Ruzuku + Zeffy). <span class="ow">Lead</span></li>
+          <li><b>Move the Foundation Course content</b> onto the US platform. <span class="ow">Lead + India team</span></li>
+          <li><b>Add the second volunteer</b> for email and community. <span class="ow">Lead</span></li>
+          <li><b>Run the first donation ask</b> to the existing email list, with a named cause. <span class="ow">Community</span></li>
+          <li><b>Launch a proper email welcome series.</b> <span class="ow">Community</span></li>
+          <li><b>Open the first US Foundation Course</b> at a US-friendly time and price. <span class="ow">Lead</span></li>
+        </ul>
+        <div class="goal">Goal by end: first paying US course students · first US donations in</div>
+      </div>
+
+      <div class="phase">
+        <div class="phhead"><span class="pill p3">Phase 3</span><h3>Deepen and scale</h3><span class="dur">Months 6–12 · the program</span></div>
+        <ul class="task">
+          <li><b>Add the Course Coordinator</b> role. <span class="ow">Lead</span></li>
+          <li><b>Run live US intro sessions</b> and a Foundation Course calendar. <span class="ow">Coordinator</span></li>
+          <li><b>Build the 1-year program application</b> and personal-call flow. <span class="ow">Coordinator</span></li>
+          <li><b>Pitch Dr. Janki to US podcasts</b> to reach the 35–45 audience. <span class="ow">Lead</span></li>
+          <li><b>Boost only the clips that already went viral</b> with a small ad budget. <span class="ow">Community</span></li>
+          <li><b>Update the website</b>: replace India links with US ones once payments work. <span class="ow">Lead</span></li>
+        </ul>
+        <div class="goal">Goal by end: a full path from clip to 1-year program, running on its own</div>
       </div>
     </div>
 
     <div class="block">
-      <div class="eyebrow">Growing up</div>
-      <h2 class="sec">Each new bit of help unlocks the next stage</h2>
-      <div class="scale">
-        <div class="sc"><div class="when"><small>Add</small>A second volunteer</div><ul><li>Real email welcome sequences that warm people up</li><li>Launch the first paid Foundation Course for US students</li><li>Reply to comments and messages, this is where money starts</li></ul></div>
-        <div class="sc"><div class="when"><small>Add</small>A small budget ($500–1,000/mo)</div><ul><li>Pay to boost only the videos that already went viral on their own</li><li>Better tools, and pitching Dr. Janki to US podcasts</li></ul></div>
-        <div class="sc"><div class="when"><small>Add</small>A part-time coordinator</div><ul><li>Run live US-timed welcome sessions and course groups</li><li>Handle applications and personal calls for the one-year program</li><li>Start a plan for search traffic and the professional audience on LinkedIn</li></ul></div>
+      <div class="eyebrow">Finding people</div>
+      <h2 class="sec">Where to recruit volunteers</h2>
+      <p class="sub">We don't need many. We need one or two who care. Here is where they actually are.</p>
+      <div class="cards g3">
+        <div class="card"><h3>Seva networks</h3><p><b>Sewa International</b> (30+ US chapters), <b>Chinmaya Mission</b> volunteers, <b>BAPS</b>. People here already give their time to dharmic causes.</p></div>
+        <div class="card"><h3>University groups</h3><p><b>Hindu Student Council</b> — 60+ campus chapters, 200,000+ students over time (MIT, NYU, Michigan, Rutgers). Perfect age for clip-making.</p></div>
+        <div class="card"><h3>Online communities</h3><p><b>r/hinduism</b> (63K members), <b>r/vedanta</b>, and Advaita/Vedanta Discord servers. Both a place to find help and to share content.</p></div>
       </div>
+      <div class="note" style="margin-top:18px"><b>How to structure it:</b> copy what works, clear roles like Chinmaya, flexible time like Isha. Offer a simple 3-month trial so young volunteers aren't scared off by a big commitment.</div>
     </div>
 
     <div class="block">
       <div class="eyebrow">Before we start</div>
-      <h2 class="sec">Questions for Dr. Janki and the team</h2>
+      <h2 class="sec">Open questions for Dr. Janki and the team</h2>
       <ul class="checks">
         <li>Is Dr. Janki comfortable with old lectures being re-cut into short, punchy clips for TikTok and Instagram?</li>
-        <li>Can the Foundation Course be offered to US students this year, at a US-friendly time and price?</li>
-        <li>Can we take course payments and donations through the US nonprofit, or keep it by hand for now?</li>
+        <li>Can the India team share the raw lecture files and the Foundation Course curriculum for US use?</li>
+        <li>Can we take course payments and donations through the US nonprofit yet?</li>
+        <li>How big is the existing email list, and can we send a donation ask to it?</li>
         <li>Is there a free book chapter we can offer as a welcome gift?</li>
         <li>Who is our first volunteer, and how many hours can they give?</li>
       </ul>
