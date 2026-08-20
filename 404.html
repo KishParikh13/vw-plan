@@ -4,91 +4,99 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vedanta Wisdom USA — Marketing Plan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
 <style>
   :root{
     --green:#06402b; --teal:#146261; --ink:#0d1c16; --muted:#6e877d;
     --cream:#f6f8ea; --paper:#fbfcf5; --white:#fff; --gold:#b3852f;
     --line:#e2e8d9; --soft:#eef2e5;
     --shadow:0 1px 2px rgba(13,28,22,.04), 0 8px 30px rgba(13,28,22,.06);
-    --serif:'Fraunces', Georgia, serif; --sans:'Lato', system-ui, sans-serif;
+    --serif:Georgia,'Times New Roman',serif; --sans:Georgia,'Times New Roman',serif;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);
-    -webkit-font-smoothing:antialiased;line-height:1.55;font-size:17px}
-  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;color:var(--green);margin:0}
-  p{margin:0 0 .8em}
-  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--green);
+    -webkit-font-smoothing:antialiased;line-height:1.5;font-size:17px}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.15;color:var(--green);margin:0}
+  p{margin:0 0 .7em}
 
-  header.top{background:var(--green);color:var(--cream);padding:40px 0 32px}
-  header.top .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#9fc4ac;margin-bottom:12px;font-weight:700}
-  header.top h1{color:var(--cream);font-size:clamp(27px,4.4vw,38px);max-width:720px;font-weight:600}
-  header.top p{color:#cfe0d3;margin-top:14px;max-width:620px;font-size:17px}
-
-  nav.toc{position:sticky;top:0;z-index:20;background:rgba(251,252,245,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  nav.toc .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
-  nav.toc .wrap::-webkit-scrollbar{display:none}
-  nav.toc a{font-size:13px;font-weight:700;color:var(--muted);padding:14px 10px;white-space:nowrap;text-decoration:none;transition:.15s}
-  nav.toc a:hover{color:var(--teal)}
-
-  main{padding:14px 0 56px}
-  section.sec{padding:32px 0;border-top:1px solid var(--line)}
-  section.sec:first-of-type{border-top:0}
-  .eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
-  h2.h{font-size:26px;margin:0 0 14px;scroll-margin-top:60px}
-  .sub{color:var(--muted);margin:-6px 0 20px;font-size:16px}
-  .block{margin-bottom:24px}
+  /* ===== SLIDE SHELL ===== */
+  .slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+    padding:56px 40px;background:var(--paper);position:relative}
+  @media(max-width:640px){.slide{padding:48px 22px}}
+  .s-in{width:100%;max-width:960px;margin:0 auto}
+  .eyebrow{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+  h2.h{font-size:clamp(24px,3.4vw,34px);margin:0 0 18px;color:var(--green)}
+  .sub{color:var(--muted);margin:-8px 0 22px;font-size:16.5px;max-width:720px}
+  .block{margin-bottom:20px}
   .block:last-child{margin-bottom:0}
 
+  /* cover */
+  .slide.cover{background:linear-gradient(160deg,#0a5138,#06402b 60%);color:var(--cream);justify-content:center}
+  .cover .kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9fc4ac;font-weight:700;margin-bottom:20px}
+  .cover h1{color:#fff;font-size:clamp(30px,5.4vw,52px);max-width:860px;line-height:1.12;font-weight:700}
+  .cover p{color:#cfe0d3;margin-top:22px;max-width:640px;font-size:19px}
+  .cover .hint{margin-top:40px;color:#7fae93;font-size:14px;letter-spacing:.02em}
+
+  /* ===== DECK CHROME ===== */
+  .chrome{position:fixed;right:20px;bottom:18px;z-index:50;display:flex;align-items:center;gap:8px}
+  .nbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);
+    color:var(--green);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow);transition:.15s;font-family:var(--sans)}
+  .nbtn:hover{background:#fff;border-color:var(--gold)}
+  .counter{background:rgba(6,64,43,.92);color:#eaf3ea;font-size:13px;font-weight:700;
+    padding:9px 14px;border-radius:20px;box-shadow:var(--shadow);min-width:58px;text-align:center;letter-spacing:.03em}
+  .dots{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:9px}
+  @media(max-width:720px){.dots{display:none}}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--line);border:0;cursor:pointer;padding:0;transition:.15s}
+  .dot:hover{background:var(--muted)}
+  .dot.on{background:var(--gold);transform:scale(1.35)}
+
   /* ===== THE FRAMEWORK DIAGRAM ===== */
-  .fw{display:grid;grid-template-columns:190px 1fr 250px;gap:14px;align-items:stretch}
+  .fw{display:grid;grid-template-columns:190px 1fr 250px;gap:12px;align-items:stretch}
   @media(max-width:860px){.fw{grid-template-columns:1fr}}
-  .fwmission{background:var(--green);color:#eaf3ea;border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
-  .fwmission .t{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9fc4ac;font-weight:700;margin-bottom:10px}
-  .fwmission b{color:#fff;font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.25}
-  .fwflow{display:flex;flex-direction:column;gap:6px}
-  .fwbox{background:var(--teal);color:#fff;border-radius:12px;padding:13px 16px;box-shadow:var(--shadow)}
+  .fwmission{background:var(--green);color:#eaf3ea;border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
+  .fwmission .t{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9fc4ac;font-weight:700;margin-bottom:8px}
+  .fwmission b{color:#fff;font-size:17px;font-weight:700;line-height:1.25}
+  .fwflow{display:flex;flex-direction:column;gap:5px}
+  .fwbox{color:#fff;border-radius:12px;padding:11px 15px;box-shadow:var(--shadow)}
   .fwbox .l{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:700}
-  .fwbox .v{font-family:var(--serif);font-size:16px;font-weight:600;margin-top:1px}
-  .fwbox small{display:block;font-size:12.5px;opacity:.9;margin-top:3px;line-height:1.35}
+  .fwbox .v{font-size:15px;font-weight:700;margin-top:1px}
+  .fwbox small{display:block;font-size:12px;opacity:.9;margin-top:2px;line-height:1.3}
   .fwbox.b1{background:#1c7160}.fwbox.b2{background:#186a5b}.fwbox.b3{background:#146261}.fwbox.b4{background:#0a4a3a}
-  .fwarr{text-align:center;color:var(--muted);font-size:14px;line-height:.6}
-  .fwright{display:flex;flex-direction:column;gap:10px}
-  .fwchan{background:linear-gradient(180deg,#c58a2a,#b3852f);color:#fff;border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+  .fwarr{text-align:center;color:var(--muted);font-size:13px;line-height:.5}
+  .fwright{display:flex;flex-direction:column;gap:9px}
+  .fwchan{background:linear-gradient(180deg,#c58a2a,#b3852f);color:#fff;border-radius:12px;padding:12px 15px;box-shadow:var(--shadow)}
   .fwchan .l{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;opacity:.85}
-  .fwchan .list{font-size:13px;line-height:1.5;margin-top:4px}
-  .fwassets{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-  .fwas{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center}
-  .fwas .l{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:700}
-  .fwas b{display:block;font-family:var(--serif);color:var(--green);font-size:14px;margin-top:2px}
-  .fwbase{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+  .fwchan .list{font-size:12.5px;line-height:1.45;margin-top:3px}
+  .fwassets{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px}
+  .fwas{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:9px 6px;text-align:center}
+  .fwas .l{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .fwas b{display:block;color:var(--green);font-size:13px;margin-top:2px}
+  .fwbase{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
   @media(max-width:560px){.fwbase{grid-template-columns:1fr}}
-  .fwbar{background:#0d5138;color:#fff;border-radius:12px;padding:15px 18px;text-decoration:none;display:block;box-shadow:var(--shadow);transition:.15s}
+  .fwbar{background:#0d5138;color:#fff;border-radius:12px;padding:13px 16px;text-decoration:none;display:block;box-shadow:var(--shadow);transition:.15s}
   .fwbar:hover{background:#0a4a3a}
   .fwbar .l{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:700}
-  .fwbar b{font-family:var(--serif);font-size:16px;font-weight:600}
-  .fwbar span{display:block;font-size:12.5px;opacity:.9;margin-top:2px}
+  .fwbar b{font-size:15px;font-weight:700}
+  .fwbar span{display:block;font-size:12px;opacity:.9;margin-top:1px}
 
   /* cards */
-  .cards{display:grid;gap:14px}
+  .cards{display:grid;gap:13px}
   .g3{grid-template-columns:repeat(3,1fr)}
   .g2{grid-template-columns:repeat(2,1fr)}
   @media(max-width:720px){.g3{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
-  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
-  .card h3{font-size:17px;margin-bottom:7px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+  .card h3{font-size:17px;margin-bottom:6px}
   .card p{font-size:14.5px;color:#33463c;margin:0}
-  .card p+p{margin-top:7px}
-  .stat{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:20px 18px;text-align:center}
-  .stat .big{font-family:var(--serif);font-size:34px;color:var(--green);font-weight:600;line-height:1}
-  .stat .lab{color:var(--muted);font-size:13.5px;margin-top:9px}
+  .card p+p{margin-top:6px}
+  .stat{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center}
+  .stat .big{font-size:33px;color:var(--green);font-weight:700;line-height:1}
+  .stat .lab{color:var(--muted);font-size:13.5px;margin-top:8px}
   .stat .big.red{color:#a6432f}
 
-  .callout{background:linear-gradient(180deg,#0a4e35,#06402b);color:#eaf3ea;border-radius:16px;padding:22px 26px}
+  .callout{background:linear-gradient(180deg,#0a4e35,#06402b);color:#eaf3ea;border-radius:16px;padding:20px 24px}
   .callout .eyebrow{color:#9fc4ac}
-  .callout h3{color:#fff;font-size:20px;margin-bottom:8px}
+  .callout h3{color:#fff;font-size:20px;margin-bottom:7px}
   .callout p{color:#d3e5d6;margin:0;font-size:15.5px}
 
   /* chip flow */
@@ -99,51 +107,53 @@
   @media(max-width:560px){.flow{flex-direction:column}.flow .arw{transform:rotate(90deg)}}
 
   /* funnel */
-  .funnel{display:flex;flex-direction:column;align-items:center;gap:8px}
-  .fstage{width:100%;border-radius:12px;padding:16px 22px;color:#fff;display:flex;gap:16px;align-items:center;box-shadow:var(--shadow)}
-  .fstage .fn{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600}
+  .funnel{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .fstage{width:100%;border-radius:12px;padding:13px 20px;color:#fff;display:flex;gap:15px;align-items:center;box-shadow:var(--shadow)}
+  .fstage .fn{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700}
   .fstage .ft{flex:1}
-  .fstage h4{color:#fff;font-size:16px;margin:0 0 2px}
-  .fstage p{margin:0;font-size:13.5px;opacity:.9;color:#fff}
-  .fstage .fp{flex:0 0 auto;font-family:var(--serif);font-weight:600;font-size:15px;white-space:nowrap;color:#fff}
+  .fstage h4{color:#fff;font-size:15.5px;margin:0 0 1px}
+  .fstage p{margin:0;font-size:13px;opacity:.9;color:#fff}
+  .fstage .fp{flex:0 0 auto;font-weight:700;font-size:15px;white-space:nowrap;color:#fff}
   .f0{background:#2a8f6f;width:100%}.f1{background:#238068;width:92%}.f2{background:#1c7160;width:84%}.f3{background:#146261;width:72%}.f4{background:#0a4a3a;width:58%}
-  .farrow{color:var(--muted);font-size:16px;line-height:0}
+  .farrow{color:var(--muted);font-size:14px;line-height:0}
 
-  /* generic table */
+  /* tables */
   table.bt{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  table.bt th,table.bt td{text-align:left;padding:12px 15px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
-  table.bt th{background:var(--green);color:var(--cream);font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.03em}
+  table.bt th,table.bt td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
+  table.bt th{background:var(--green);color:var(--cream);font-weight:700;font-size:12.5px;letter-spacing:.03em}
   table.bt tr:last-child td{border-bottom:0}
   table.bt td.n{font-weight:700;color:var(--teal);white-space:nowrap}
+  table.bt td .tgt{color:var(--green);font-weight:700}
 
-  .note{background:var(--cream);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;font-size:14.5px}
+  .note{background:var(--cream);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:13px 17px;font-size:14.5px}
   .note b{color:var(--green)}
 
   /* roles */
-  .roles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media(max-width:640px){.roles{grid-template-columns:1fr}}
-  .role{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .roles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:860px){.roles{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.roles{grid-template-columns:1fr}}
+  .role{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
   .role.now{border-top:4px solid var(--teal)}
   .role.later{border-top:4px solid var(--line);opacity:.9}
-  .role .rtag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);margin-bottom:5px}
+  .role .rtag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
   .role.later .rtag{color:var(--muted)}
-  .role h3{font-size:18px;margin-bottom:3px}
-  .role .who{color:var(--muted);font-size:13px;margin-bottom:10px}
-  .role ul{margin:0;padding-left:17px;font-size:14px;color:#43564c}
-  .role ul li{margin-bottom:4px}
+  .role h3{font-size:16.5px;margin-bottom:2px}
+  .role .who{color:var(--muted);font-size:12.5px;margin-bottom:9px}
+  .role ul{margin:0;padding-left:16px;font-size:13.5px;color:#43564c}
+  .role ul li{margin-bottom:3px}
 
   /* budget */
   .budget{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
   @media(max-width:640px){.budget{grid-template-columns:1fr}}
-  .bud{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .bud{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:15px 18px}
   .bud .l{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:700}
-  .bud .n{font-family:var(--serif);font-size:26px;color:var(--green);font-weight:600;margin:4px 0}
-  .bud p{font-size:13.5px;color:#43564c;margin:0}
+  .bud .n{font-size:25px;color:var(--green);font-weight:700;margin:3px 0}
+  .bud p{font-size:13px;color:#43564c;margin:0}
 
   /* gantt */
   .gantt{overflow-x:auto}
   .gtable{display:grid;grid-template-columns:130px repeat(4,1fr);gap:6px;min-width:560px}
-  .ghead{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#fff;background:var(--green);border-radius:8px;padding:8px 6px;text-align:center}
+  .ghead{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#fff;background:var(--green);border-radius:8px;padding:8px 6px;text-align:center}
   .ghead.blank{background:transparent}
   .grow{font-size:13px;font-weight:700;color:var(--ink);display:flex;align-items:center;padding:0 4px}
   .gcell{border-radius:8px;padding:9px 8px;font-size:11.5px;font-weight:700;color:#fff;text-align:center;line-height:1.25;min-height:38px;display:flex;align-items:center;justify-content:center}
@@ -151,75 +161,40 @@
   .g-a{background:#2a8f6f}.g-b{background:#1c7160}.g-c{background:var(--teal)}.g-d{background:#0a4a3a}
   .g-prep{background:#cdbf8e;color:#5a4a1a}
 
-  /* metrics */
-  .mstar{background:linear-gradient(180deg,#0a4e35,#06402b);color:#eaf3ea;border-radius:14px;padding:18px 22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-  .mstar .k{font-family:var(--serif);font-size:22px;color:#fff;font-weight:600;flex:0 0 auto}
-  .mstar p{margin:0;font-size:14.5px;color:#d3e5d6}
-  table.bt td .tgt{color:var(--green);font-weight:700}
+  .mstar{background:linear-gradient(180deg,#0a4e35,#06402b);color:#eaf3ea;border-radius:14px;padding:16px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .mstar .k{font-size:20px;color:#fff;font-weight:700;flex:0 0 auto}
+  .mstar p{margin:0;font-size:14px;color:#d3e5d6}
 
-  /* phases */
-  .phase{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
-  .phhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
-  .phhead h3{font-size:19px;flex:1;min-width:160px}
-  .phhead .dur{color:var(--muted);font-size:13px;font-weight:700}
-  .pill{font-size:12px;font-weight:900;color:#fff;padding:4px 11px;border-radius:20px;letter-spacing:.03em}
-  .pill.p0{background:#8a6d1f}.pill.p1{background:#2a8f6f}.pill.p2{background:var(--teal)}.pill.p3{background:var(--green)}
-  ul.task{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-  ul.task li{font-size:14.5px;color:#33463c;padding-left:24px;position:relative;line-height:1.45}
-  ul.task li::before{content:"";position:absolute;left:3px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--soft);border:2px solid var(--teal)}
-  ul.task li b{color:var(--ink)}
-  .ow{display:inline-block;font-size:11px;font-weight:700;background:var(--cream);color:var(--teal);padding:2px 8px;border-radius:20px;margin-left:2px;white-space:nowrap;border:1px solid var(--line)}
-  .goal{margin-top:12px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 14px;font-size:13.5px;font-weight:700;color:var(--green)}
-
-  .checks{list-style:none;padding:0;margin:0;display:grid;gap:9px}
-  .checks li{display:flex;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:10px;padding:13px 16px;font-size:14.5px;align-items:flex-start}
-  .checks li::before{content:"✓";flex:0 0 auto;width:23px;height:23px;border-radius:50%;background:#e6f0ea;color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px}
+  .checks{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+  .checks li{display:flex;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14.5px;align-items:flex-start}
+  .checks li::before{content:"✓";flex:0 0 auto;width:23px;height:23px;border-radius:50%;background:#e6f0ea;color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
   .checks li b{color:var(--green)}
   .checks li .a{color:var(--muted)}
-
-  footer{background:var(--green);color:#bcd6c2;padding:26px 0;font-size:13px;text-align:center}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
+<!-- 1 · COVER -->
+<section class="slide cover" data-t="Cover">
+  <div class="s-in">
     <div class="kicker">Vedanta Wisdom · United States</div>
     <h1>Reach young Americans looking for meaning. Turn their attention into donations.</h1>
-    <p>Built on a standard nonprofit marketing framework: who we reach, what we say, where we say it, what it takes, and how we measure it.</p>
+    <p>A marketing plan built on a standard nonprofit framework: who we reach, what we say, where, what it takes, and how we measure it.</p>
+    <div class="hint">Use ← → arrow keys, or the dots, to move through the deck</div>
   </div>
-</header>
+</section>
 
-<nav class="toc">
-  <div class="wrap">
-    <a href="#framework">Framework</a>
-    <a href="#audience">Audience</a>
-    <a href="#message">Message</a>
-    <a href="#channels">Channels</a>
-    <a href="#assets">Assets</a>
-    <a href="#goals">Goals</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#metrics">Metrics</a>
-    <a href="#money">Donations</a>
-    <a href="#confirmed">Confirmed</a>
-  </div>
-</nav>
-
-<main>
-<div class="wrap">
-
-  <!-- FRAMEWORK -->
-  <section class="sec" id="framework">
+<!-- 2 · FRAMEWORK -->
+<section class="slide" data-t="Framework">
+  <div class="s-in">
     <div class="eyebrow">The whole plan, one picture</div>
     <h2 class="h">The framework</h2>
     <p class="sub">Mission drives who we reach. That drives what we do, say, and aim for. Channels and assets carry it. A timeline and metrics keep it honest.</p>
-
     <div class="fw">
       <div class="fwmission">
         <div class="t">Mission &amp; vision</div>
         <b>Make Vedanta a living, practical tool for young Americans, and fund the work that shares it.</b>
       </div>
-
       <div class="fwflow">
         <div class="fwbox b1"><div class="l">Audience</div><div class="v">Two groups</div><small>Seekers 18–25 · the ready 35–45</small></div>
         <div class="fwarr">▼</div>
@@ -229,7 +204,6 @@
         <div class="fwarr">▼</div>
         <div class="fwbox b4"><div class="l">Objectives &amp; goals</div><div class="v">Emails + donations</div><small>Grow the list, bring in gifts and students</small></div>
       </div>
-
       <div class="fwright">
         <div class="fwchan">
           <div class="l">Channels</div>
@@ -237,20 +211,21 @@
         </div>
         <div class="fwassets">
           <div class="fwas"><div class="l">People</div><b>1 volunteer</b></div>
-          <div class="fwas"><div class="l">Content</div><b>100s of hrs</b></div>
-          <div class="fwas"><div class="l">Budget</div><b>~$0 to start</b></div>
+          <div class="fwas"><div class="l">Content</div><b>100s hrs</b></div>
+          <div class="fwas"><div class="l">Budget</div><b>~$0</b></div>
         </div>
       </div>
     </div>
-
     <div class="fwbase">
-      <a class="fwbar" href="#timeline"><div class="l">Implementation</div><b>Timeline →</b><span>What happens, and when, over 12 months</span></a>
-      <a class="fwbar" href="#metrics"><div class="l">Evaluation</div><b>Metrics →</b><span>Targets set against real nonprofit benchmarks</span></a>
+      <a class="fwbar" href="#s-timeline"><div class="l">Implementation</div><b>Timeline →</b><span>What happens, and when, over 12 months</span></a>
+      <a class="fwbar" href="#s-metrics"><div class="l">Evaluation</div><b>Metrics →</b><span>Targets set against real nonprofit benchmarks</span></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- AUDIENCE -->
-  <section class="sec" id="audience">
+<!-- 3 · AUDIENCE -->
+<section class="slide" data-t="Audience">
+  <div class="s-in">
     <div class="eyebrow">Audience</div>
     <h2 class="h">Two groups, one plan</h2>
     <div class="cards g2">
@@ -268,14 +243,15 @@
       </div>
     </div>
     <div class="note" style="margin-top:14px"><b>Clips come first.</b> They serve the young group and reach some older ones too. Podcasts and LinkedIn wait for a second helper.</div>
-  </section>
+  </div>
+</section>
 
-  <!-- MESSAGE -->
-  <section class="sec" id="message">
+<!-- 4 · MESSAGE -->
+<section class="slide" data-t="Message">
+  <div class="s-in">
     <div class="eyebrow">Message &amp; call to action</div>
     <h2 class="h">Not old scripture. A way to calm a busy mind.</h2>
     <p class="sub">Lead with what young people feel. Let Vedanta be the answer. We don't make new content, we share what exists, better.</p>
-
     <div class="block">
       <div class="flow">
         <div class="chip">Name a feeling<small>stress, "what am I doing"</small></div>
@@ -286,9 +262,8 @@
       </div>
       <div class="note" style="margin-top:14px"><b>Her own numbers prove it.</b> Videos that did this hit 4,000 to 7,000 views. New ones open with slides and get under 150.</div>
     </div>
-
     <div class="block">
-      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">The path.</b> No one joins a year-long program cold. Each step earns the next.</p>
+      <p class="sub" style="margin:0 0 10px"><b style="color:var(--green)">The path.</b> No one joins a year-long program cold. Each step earns the next.</p>
       <div class="funnel">
         <div class="fstage f0"><div class="fn">1</div><div class="ft"><h4>Watch a short clip</h4><p>A few a week, cut from old lectures.</p></div><div class="fp">Free</div></div>
         <div class="farrow">▼</div>
@@ -301,13 +276,15 @@
         <div class="fstage f4"><div class="fn">5</div><div class="ft"><h4>Join the one-year program</h4><p>Offered to graduates by a personal call, on months of trust.</p></div><div class="fp">Apply</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CHANNELS -->
-  <section class="sec" id="channels">
+<!-- 5 · CHANNELS -->
+<section class="slide" data-t="Channels">
+  <div class="s-in">
     <div class="eyebrow">Channels</div>
     <h2 class="h">Each channel has one job</h2>
-    <p class="sub">We don't spread thin. Every channel does a specific thing in the path above.</p>
+    <p class="sub">We don't spread thin. Every channel does a specific thing in the path.</p>
     <table class="bt">
       <tr><th>Channel</th><th>Its job</th><th>Starts</th></tr>
       <tr><td class="n">TikTok / Reels / Shorts</td><td>Reach strangers. Top of the funnel.</td><td>Phase 1</td></tr>
@@ -317,44 +294,49 @@
       <tr><td class="n">Podcasts + LinkedIn</td><td>Reach the 35–45 group. Bigger gifts.</td><td>Phase 3</td></tr>
       <tr><td class="n">Paid boosts</td><td>Amplify only clips that already went viral.</td><td>Phase 3</td></tr>
     </table>
-  </section>
+  </div>
+</section>
 
-  <!-- ASSETS -->
-  <section class="sec" id="assets">
+<!-- 6 · ASSETS -->
+<section class="slide" data-t="Assets">
+  <div class="s-in">
     <div class="eyebrow">Assets: people, content, budget</div>
     <h2 class="h">What it takes to run this</h2>
-
     <div class="block">
-      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">People.</b> Two roles now, two more as we grow.</p>
+      <p class="sub" style="margin:0 0 10px"><b style="color:var(--green)">People.</b> Two roles now, two more as we grow.</p>
       <div class="roles">
-        <div class="role now"><div class="rtag">Start now</div><h3>Clip Maker</h3><div class="who">1 volunteer · 8–10 hrs/wk · age 20–30</div><ul><li>Pick the best moments from old lectures</li><li>Write hooks in a young US voice</li><li>Post 3–5 clips a week</li></ul></div>
-        <div class="role now"><div class="rtag">Start now</div><h3>Project Lead</h3><div class="who">Kish · part-time</div><ul><li>Set up the tools once</li><li>Approve clips before they post</li><li>Coordinate with the India team</li></ul></div>
-        <div class="role later"><div class="rtag">Phase 2</div><h3>Email &amp; Community</h3><div class="who">2nd volunteer</div><ul><li>Write the weekly email</li><li>Reply to comments</li><li>Run donation asks</li></ul></div>
-        <div class="role later"><div class="rtag">Phase 3</div><h3>Course Coordinator</h3><div class="who">part-time, paid or senior</div><ul><li>Run live intro sessions</li><li>Handle course sign-ups</li><li>Manage 1-year applications</li></ul></div>
+        <div class="role now"><div class="rtag">Start now</div><h3>Clip Maker</h3><div class="who">1 volunteer · 8–10 hrs/wk</div><ul><li>Pick moments from lectures</li><li>Write hooks, young US voice</li><li>Post 3–5 clips a week</li></ul></div>
+        <div class="role now"><div class="rtag">Start now</div><h3>Project Lead</h3><div class="who">Kish · part-time</div><ul><li>Set up tools once</li><li>Approve clips</li><li>Coordinate India team</li></ul></div>
+        <div class="role later"><div class="rtag">Phase 2</div><h3>Email &amp; Community</h3><div class="who">2nd volunteer</div><ul><li>Weekly email</li><li>Reply to comments</li><li>Run donation asks</li></ul></div>
+        <div class="role later"><div class="rtag">Phase 3</div><h3>Course Coordinator</h3><div class="who">part-time / senior</div><ul><li>Live intro sessions</li><li>Course sign-ups</li><li>1-year applications</li></ul></div>
       </div>
     </div>
-
     <div class="block">
-      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">Content.</b> The rare part: it already exists.</p>
-      <div class="cards g3">
-        <div class="stat"><div class="big">100s</div><div class="lab">Hours of recorded lectures to cut from</div></div>
-        <div class="stat"><div class="big">15,400</div><div class="lab">YouTube followers, a head start</div></div>
-        <div class="stat"><div class="big">2</div><div class="lab">Books already on Amazon US</div></div>
+      <div class="cards g2" style="grid-template-columns:1.1fr 1.4fr">
+        <div>
+          <p class="sub" style="margin:0 0 10px"><b style="color:var(--green)">Content.</b> The rare part: it already exists.</p>
+          <div class="cards g3">
+            <div class="stat"><div class="big">100s</div><div class="lab">Hours of lectures</div></div>
+            <div class="stat"><div class="big">15.4K</div><div class="lab">YouTube followers</div></div>
+            <div class="stat"><div class="big">2</div><div class="lab">Books on Amazon</div></div>
+          </div>
+        </div>
+        <div>
+          <p class="sub" style="margin:0 0 10px"><b style="color:var(--green)">Budget.</b> Version one costs almost nothing but time.</p>
+          <div class="budget">
+            <div class="bud"><div class="l">Phase 0–1</div><div class="n">~$0</div><p>Free tools, Zeffy zero fees, volunteer time.</p></div>
+            <div class="bud"><div class="l">Phase 2</div><div class="n">~$0–50/mo</div><p>Email paid tier once the list grows.</p></div>
+            <div class="bud"><div class="l">Phase 3</div><div class="n">$200–500/mo</div><p>Optional boosts on proven clips.</p></div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="block">
-      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">Budget.</b> Version one costs almost nothing but time.</p>
-      <div class="budget">
-        <div class="bud"><div class="l">Phase 0–1</div><div class="n">~$0</div><p>Free email + course tiers, existing clip tools, Zeffy zero fees, volunteer time.</p></div>
-        <div class="bud"><div class="l">Phase 2</div><div class="n">~$0–50/mo</div><p>Email tool paid tier once the list grows past a few thousand.</p></div>
-        <div class="bud"><div class="l">Phase 3</div><div class="n">$200–500/mo</div><p>Optional ad boosts on proven clips. Only if it earns its keep.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GOALS -->
-  <section class="sec" id="goals">
+<!-- 7 · GOALS -->
+<section class="slide" data-t="Goals">
+  <div class="s-in">
     <div class="eyebrow">Objectives &amp; goals</div>
     <h2 class="h">What "working" looks like</h2>
     <div class="cards g3">
@@ -362,11 +344,13 @@
       <div class="stat"><div class="big">3–5</div><div class="lab">Clips a week, held for 12 weeks</div></div>
       <div class="stat"><div class="big">1st</div><div class="lab">US paying student + first donations by month 6</div></div>
     </div>
-    <div class="note" style="margin-top:14px"><b>Donations are the top objective,</b> and they're already live. The email list is the leading indicator. Everything else follows it.</div>
-  </section>
+    <div class="note" style="margin-top:16px"><b>Donations are the top objective,</b> and they're already live. The email list is the leading indicator. Everything else follows it.</div>
+  </div>
+</section>
 
-  <!-- TIMELINE -->
-  <section class="sec" id="timeline">
+<!-- 8 · TIMELINE -->
+<section class="slide" id="s-timeline" data-t="Timeline">
+  <div class="s-in">
     <div class="eyebrow">Implementation plan</div>
     <h2 class="h">Timeline, by workstream</h2>
     <p class="sub">Each phase starts only when the last one works. Color = active work.</p>
@@ -409,21 +393,21 @@
         <div class="gcell g-d">Podcasts + 1-yr flow</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- METRICS -->
-  <section class="sec" id="metrics">
+<!-- 9 · METRICS -->
+<section class="slide" id="s-metrics" data-t="Metrics">
+  <div class="s-in">
     <div class="eyebrow">Metrics &amp; evaluation</div>
     <h2 class="h">Targets against real benchmarks</h2>
     <p class="sub">Set expectations with numbers from across the US nonprofit sector, so we plan patiently and know what "good" is.</p>
-
     <div class="block">
       <div class="mstar">
-        <div class="k">★ North-star metric: email sign-ups</div>
+        <div class="k">★ North-star: email sign-ups</div>
         <p>The one number to watch weekly. Traffic, donations, and course sales all track back to the size and health of the list we own.</p>
       </div>
     </div>
-
     <table class="bt">
       <tr><th>Metric</th><th>Typical nonprofit</th><th>Our target / watch</th></tr>
       <tr><td class="n">Email open rate</td><td>~15–25%</td><td><span class="tgt">Aim 25%+</span> (engaged niche)</td></tr>
@@ -431,17 +415,17 @@
       <tr><td class="n">Avg online gift</td><td>$87 one-time · $23 monthly</td><td>Set ask tiers around it</td></tr>
       <tr><td class="n">Raised per 1,000 site visits</td><td>~$1,190</td><td>Drive clip traffic to /donate</td></tr>
       <tr><td class="n">Email list churn</td><td>~14% / year</td><td>Keep sign-ups ahead of churn</td></tr>
-      <tr><td class="n">Course sign-up (warm list)</td><td>8–15%</td><td>First US course, month 3–6</td></tr>
     </table>
-    <div class="note" style="margin-top:14px"><b>Review cadence:</b> one short numbers report each month, clips posted, follower growth, sign-ups, opens, gifts, students. Do more of what moves the list.</div>
-  </section>
+    <div class="note" style="margin-top:14px"><b>Review cadence:</b> one short numbers report each month, clips, follower growth, sign-ups, opens, gifts, students.</div>
+  </div>
+</section>
 
-  <!-- MONEY -->
-  <section class="sec" id="money">
+<!-- 10 · DONATIONS -->
+<section class="slide" data-t="Donations">
+  <div class="s-in">
     <div class="eyebrow">Donations engine</div>
     <h2 class="h">Two clocks, running together</h2>
     <p class="sub">One brings money this quarter. The other builds donors for years.</p>
-
     <div class="block">
       <div class="callout">
         <div class="eyebrow">Live today</div>
@@ -449,7 +433,6 @@
         <p>Registered 501(c)(3). Gifts are tax-deductible. Runs on Zeffy with zero fees, so $100 arrives as $100.</p>
       </div>
     </div>
-
     <div class="block">
       <div class="cards g2">
         <div class="card" style="border-top:4px solid var(--gold)">
@@ -464,27 +447,19 @@
         </div>
       </div>
     </div>
-
-    <div class="block">
-      <p class="sub" style="margin:0 0 12px"><b style="color:var(--green)">Name what the money does.</b> "Sponsor a student" beats "please donate."</p>
-      <div class="cards g3">
-        <div class="card"><h3>Keep it free</h3><p>Videos, classes, and free talks stay open to all.</p></div>
-        <div class="card"><h3>Sponsor a student</h3><p>Cover a course or the year for someone who can't afford it.</p></div>
-        <div class="card"><h3>Build the University</h3><p>The long vision: a residential Vedanta university. For legacy gifts.</p></div>
-      </div>
-    </div>
-
     <div class="block">
       <div class="cards g3">
+        <div class="card"><h3>Sponsor a student</h3><p>Name what money does. "Sponsor a student" beats "please donate."</p></div>
         <div class="card"><h3>Monthly givers</h3><p>The steadiest money there is. Ask one-time givers to go monthly.</p></div>
-        <div class="card"><h3>Grants</h3><p>Can dwarf small gifts. Already in motion. Needs one owner.</p></div>
-        <div class="card"><h3>Courses on Ruzuku</h3><p>Built for spiritual teachers. No fees, free up to 5 students. Others charge ~$295–375 intro.</p></div>
+        <div class="card"><h3>Courses on Ruzuku</h3><p>No fees, free up to 5 students. Others charge ~$295–375 intro.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONFIRMED -->
-  <section class="sec" id="confirmed">
+<!-- 11 · CONFIRMED -->
+<section class="slide" data-t="Confirmed">
+  <div class="s-in">
     <div class="eyebrow">Green lights</div>
     <h2 class="h">Everything needed to start is confirmed</h2>
     <ul class="checks">
@@ -495,14 +470,60 @@
       <li><div><b>A free welcome gift.</b> <span class="a">Yes, to be chosen. Placeholder for now.</span></div></li>
       <li><div><b>The first volunteer.</b> <span class="a">To recruit from the network.</span></div></li>
     </ul>
-  </section>
+  </div>
+</section>
 
+<!-- DECK CHROME -->
+<div class="dots" id="dots"></div>
+<div class="chrome">
+  <button class="nbtn" id="prev" aria-label="Previous slide">‹</button>
+  <div class="counter" id="counter">1 / 11</div>
+  <button class="nbtn" id="next" aria-label="Next slide">›</button>
 </div>
-</main>
 
-<footer>
-  <div class="wrap">Vedanta Wisdom USA · Marketing Plan · August 2026 · A living document</div>
-</footer>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const counter=document.getElementById('counter');
+  const dotsWrap=document.getElementById('dots');
+  let i=0;
 
+  slides.forEach((s,n)=>{
+    const d=document.createElement('button');
+    d.className='dot';d.title=s.dataset.t||('Slide '+(n+1));
+    d.addEventListener('click',()=>go(n));
+    dotsWrap.appendChild(d);
+  });
+  const dots=[...dotsWrap.children];
+
+  function paint(){
+    counter.textContent=(i+1)+' / '+slides.length;
+    dots.forEach((d,n)=>d.classList.toggle('on',n===i));
+  }
+  function go(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides[i].scrollIntoView({behavior:'smooth'});
+    paint();
+  }
+
+  document.getElementById('prev').addEventListener('click',()=>go(i-1));
+  document.getElementById('next').addEventListener('click',()=>go(i+1));
+
+  window.addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1);}
+    else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+  });
+
+  // keep counter/dots in sync with manual scroll
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){i=slides.indexOf(en.target);paint();}
+    });
+  },{threshold:.6});
+  slides.forEach(s=>io.observe(s));
+
+  paint();
+</script>
 </body>
 </html>
